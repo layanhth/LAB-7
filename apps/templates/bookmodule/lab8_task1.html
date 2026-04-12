@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Lab 8 Task 1{% endblock title %}
+
+{% block content %}
+<h1>Books with Price Less Than or Equal to 80</h1>
+
+{% if books %}
+    <ul>
+    {% for book in books %}
+        <li>
+            ID: {{ book.id }}<br>
+            Title: {{ book.title }}<br>
+            Author: {{ book.author }}<br>
+            Price: {{ book.price }}<br>
+            Edition: {{ book.edition }}
+        </li>
+        <hr>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No books found.</p>
+{% endif %}
+
+{% endblock content %}
